@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" type="jpg" href="logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <div class="navbar">
+        <img src="/petVet/img/logo.jpg" alt="Clinc logo" class="logo"><!--حطي اذا ضغطنا عليه يودينا الهوم بيج-->
+        <ul>
+            <li><a href="homeUser.html">Home</a></li>
+            <li><a href="appoiment.html">Appoiment</a></li>
+            <li><a href="Doctors.html">Doctors</a></li>
+            <li><a href="productUser.html">Product</a></li>
+            <li><a href="index.html">Profile</a></li><!--تسجيل الدخول والتسجيل-->
+        </ul>
+    </div>
+    
+    <div class="card" style="width: 28%;"> 
+        <form  name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            <div>
+                <h3 class="text">Sign up</h3>
+            </div>
+        <div class="input-contener">  
+            <label class="form-label" for="name"> user name</label>
+            <input type="name" id="myInput"  name="fname" class="name" placeholder=" Enter your name" style="width: 100%; height:36px; border-radius: 10px; border-color: #d6caca;"/>
+            <p id="demo" style="color: red;"></p>
+        </div>
+       <br/>
+        
+        <div class="input-contener">
+            <label class="form-label" for="number"> phone number</label>
+        <input name="num"  type="number" name="text" maxlength="10"  placeholder="Enter your number" style="width:100%;
+        height: 36px;
+        border-radius: 10px;
+        border-color: #d6caca;"/>
+         <p id="phone" style="color: red;"></p>
+        </div> 
+        <br>
+        <div class="input-contener">
+            <label class="form-label" for="text">Address</label>
+        <input name="Addres" type="text" name="text"    style=" width: 100%;
+        height: 36px;
+        border-radius: 10px;
+        border-color: #d6caca;" placeholder="Enter your Address"/>
+        <p id="Addres" style="color: red;"></p>
+        
+        </div> 
+        <br/>
+        <div class="input-contener">
+            <label class="form-label" for="Password" > password</label>
+            <input name="pas"  type="password" onChange="onChange()" id="password" class="password" placeholder="password" style="width: 100%;
+            height: 36px;
+            border-radius: 10px;
+            border-color: #d6caca;" />
+            <p id="pas" style="color: red;"></p>
+        </div> 
+        <br/>
+        <div class="input-contener">
+            <label class="form-label" for="Password2"> Confirm your password</label>
+            <input name="Confirm" type="password"  onChange="onChange()" id="password2" class="password" style="width:100%;
+            height: 36px; ;
+            border-radius: 10px;
+            border-color: #d6caca;"  placeholder=" Confirm your password"/>   
+            <span id='message' style="color: red;"></span>
+            <p id="Confirm" style="color: red; font-size: 10px;"></p>
+        </div>
+
+    <div>
+        <p style="color: gray; margin-top: 15px; font-size: 15px" >Have already an account? <a href="index2.html" style="color: black;">Login here</a> </p>
+    </div>
+
+    <button style="display: block; margin: 20px auto 0 auto;" type="submit" class="gradient-custom-4">Register</button>
+    
+    </form>
+ </div>
+ <footer id="footer">
+  <div class="add">
+      <h3>ADDRESS</h3>
+      <div class="icon">
+      <p><i class="fa-sharp fa-solid fa-location-dot"></i>Saudi Arabia , Riyadh</p>
+      <p><i class="fa-solid fa-phone"></i>Phone: 0556678891</p>
+      <p><i class="fa-brands fa-tiktok"></i></i>@trustyvettt</p>
+      </div>
+    </footer>
+  
+
+ <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+
+<script>
+  function validateForm() {
+    let x = document.forms["myForm"]["fname"].value;
+    let y = document.forms["myForm"]["num"].value;
+    let z = document.forms["myForm"]["Addres"].value;
+    let e = document.forms["myForm"]["pas"].value;
+    let u = document.forms["myForm"]["Confirm"].value;
+    if (x == "") {
+      document.getElementById("demo").innerHTML = "Name must be filled out";
+      return false;
+    }
+  
+    else if (y == "") {
+      document.getElementById("phone").innerHTML = "number must be filled out";
+      return false;
+    }
+    else if (z == "") {
+      document.getElementById("Addres").innerHTML = "Addres must be filled out";
+      return false;
+  }
+
+  else if (e == "") {
+      document.getElementById("pas").innerHTML = "password must be filled out";
+      return false;
+}
+else if (u == "") {
+  document.getElementById("Confirm").innerHTML = "Confirm must be filled out";
+      return false;
+  }
+  else if (e != u) {
+      document.getElementById("message").innerHTML = " the passwords dose not matched ";
+      return false;
+
+  }
+}
+  </script>
+
+</body>
+</html>

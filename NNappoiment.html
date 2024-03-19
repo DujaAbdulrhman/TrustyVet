@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>Appoointment Booking</title>
+  
+
+  <link rel="stylesheet" type="text/css" href="sy.css">
+
+  
+</head>
+<body>
+  <header>
+  <div class="navbar">
+        <img src="/petVet/img/logo.jpg" alt="Clinc logo" class="logo">
+        <br> <br>
+        <br>
+        <ul>
+            <li><a href="homeUser.html">Home</a></li>
+            <li><a href="appoiment.html">Appoiment</a></li>
+            <li><a href="#">DOCTORS</a></li>
+            <li><a href="productUser.html">Product</a></li>
+            <li><a href="#">Profile</a></li><!--تسجيل الدخول والتسجيل-->
+        </ul>
+    </div>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br><br><br>
+  </header>
+  <div class="container">
+    <h1>Appointment Booking</h1>
+    <form id="appointment-form">
+      <label for="required-service">Required Service:</label>
+      <select id="required-service">
+        <option value="Cat vaccination">Cat vaccination</option>
+        <option value="Dog vaccination">Dog vaccination</option>
+        <option value="General check-up">General check-up</option>
+        <option value="Shower and shave">Shower and shave</option>
+        <option value="Dental examination and care">Dental examination and care</option>
+        <option value="X-ray or sonar">X-ray or sonar</option>
+        <option value="Complete analysis">Complete analysis</option>
+        <option value="Nail cutting and care">Nail cutting and care</option>
+      </select>
+      <br><br>
+      <label for="choose-doctor">Choose a Doctor:</label>
+      <select id="choose-doctor">
+        <option value="Dr. Lama">Dr. Lama</option>
+        <option value="Dr. Hamd">Dr. Hamd </option>
+        <option value="Dr. 	Sara">Dr. Sara</option>
+      </select>
+      <br><br>
+      <label for="date">Date:</label>
+      <input type="date" id="date">
+      <br><br>
+      <label for="time">Time - Hour:</label>
+      <input type="time" id="time">
+      <br><br>
+      <button type="submit">Reservation</button>
+    </form>
+  </div>
+
+
+<script>
+  const form = document.getElementById('appointment-form');
+  const chooseDoctor = document.getElementById('choose-doctor');
+  let selectedDoctor = chooseDoctor.value; // Get the initial selected value
+
+  chooseDoctor.addEventListener('change', function() {
+    selectedDoctor = chooseDoctor.value; // Update the selected value on change
+  });
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const requiredService = document.getElementById('required-service').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    selectedDoctor = chooseDoctor.value; // Update the selected value on form submission
+
+    // Create the confirmation message
+    const confirmationMessage = `Your appointment has been successfully booked!
+      Required Service: ${requiredService}
+      Chosen Doctor: ${selectedDoctor}
+      Date: ${date}
+      Time: ${time}`;
+
+    // Display the confirmation message
+    alert(confirmationMessage);
+  });
+</script>
+<br><br>
+<footer id="footer">
+  <div class="add">
+      <h3>ADDRESS</h3>
+      <div class="icon">
+      <p><i class="fa-sharp fa-solid fa-location-dot"></i>Saudi Arabia , Riyadh</p>
+      <p><i class="fa-solid fa-phone"></i>Phone: 0556678891</p>
+      <p><i class="fa-brands fa-tiktok"></i></i>@trustyvettt</p>
+      </div>
+  </div>
+       </footer>
+
+</body>
+</html>
